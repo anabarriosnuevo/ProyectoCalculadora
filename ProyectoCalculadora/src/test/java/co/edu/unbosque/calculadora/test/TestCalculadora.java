@@ -64,6 +64,22 @@ public class TestCalculadora {
     
     @Test
     public void operacionMultiplicacion() {
+       System.out.println("iniciando prueba Multiplicacion ");
+      //String expr ="2*3";
+     // String expr ="2*3+(1*5)";
+       String expr ="-5*2+(1-2)+(9*1)";
+        
+            EvaluaExpresion evaluaExpresion = new EvaluaExpresion();
+            evaluaExpresion.setExpresion(expr);
+            EjecutaExpresion ejecutaExpresion = new EjecutaExpresion(evaluaExpresion);
+            Invocador invocador = new Invocador(ejecutaExpresion);
+            invocador.invocar();
+            String resultado =evaluaExpresion.getResultado();
+            int numero = Integer.parseInt(resultado);
+            //int aux =6;
+            //int aux =11;
+           int aux =-2;
+            Assert.assertTrue(numero==aux);
         
     }
     

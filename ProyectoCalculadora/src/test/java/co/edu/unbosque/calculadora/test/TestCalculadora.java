@@ -5,11 +5,10 @@
 */
 package co.edu.unbosque.calculadora.test;
 
+import co.edu.unbosque.calculadora.logica.EjecutaExpresion;
+import co.edu.unbosque.calculadora.logica.EvaluaExpresion;
+import co.edu.unbosque.calculadora.logica.Invocador;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 /**
@@ -20,6 +19,22 @@ public class TestCalculadora {
     
     @Test
     public void operacionSuma() {
+        System.out.println("iniciando prueba suma ");
+       // String expr ="2+3";
+        //String expr ="2+3+(1+5)";
+        String expr ="-5+2+(1-2)+(9+1)";
+        
+            EvaluaExpresion evaluaExpresion = new EvaluaExpresion();
+            evaluaExpresion.setExpresion(expr);
+            EjecutaExpresion ejecutaExpresion = new EjecutaExpresion(evaluaExpresion);
+            Invocador invocador = new Invocador(ejecutaExpresion);
+            invocador.invocar();
+            String resultado =evaluaExpresion.getResultado();
+            int numero = Integer.parseInt(resultado);
+            //int aux =5;
+            //int aux =11;
+            int aux =6;
+            Assert.assertTrue(numero==aux);    
         
     }
     

@@ -85,6 +85,22 @@ public class TestCalculadora {
     
     @Test
     public void operacionDivision() {
+       System.out.println("iniciando prueba Division ");
+      //String expr ="4/2";
+      //String expr ="4*3/(1+2)";
+       String expr ="(-5*-2+(1-3))/(8*1)";
+        
+            EvaluaExpresion evaluaExpresion = new EvaluaExpresion();
+            evaluaExpresion.setExpresion(expr);
+            EjecutaExpresion ejecutaExpresion = new EjecutaExpresion(evaluaExpresion);
+            Invocador invocador = new Invocador(ejecutaExpresion);
+            invocador.invocar();
+            String resultado =evaluaExpresion.getResultado();
+            int numero = Integer.parseInt(resultado);
+            //int aux =2;
+            //int aux =4;
+           int aux =1;
+            Assert.assertTrue(numero==aux);
         
     }
     

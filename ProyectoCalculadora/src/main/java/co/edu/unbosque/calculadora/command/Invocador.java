@@ -1,4 +1,4 @@
-package co.edu.unbosque.calculadora.logica;
+package co.edu.unbosque.calculadora.command;
 
 
 /**

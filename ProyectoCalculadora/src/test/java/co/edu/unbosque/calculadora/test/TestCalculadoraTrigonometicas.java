@@ -5,9 +5,9 @@
 */
 package co.edu.unbosque.calculadora.test;
 
-import co.edu.unbosque.calculadora.logica.EjecutaExpresion;
-import co.edu.unbosque.calculadora.logica.EvaluaExpresion;
-import co.edu.unbosque.calculadora.logica.Invocador;
+import co.edu.unbosque.calculadora.command.EjecutaExpresion;
+import co.edu.unbosque.calculadora.command.EvaluaExpresion;
+import co.edu.unbosque.calculadora.command.Invocador;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
